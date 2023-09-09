@@ -31,3 +31,37 @@ nav a {
   box-shadow: 0 5px 20px #bed0ed;
   margin-bottom: 15px;
 }
+
+.btn_loadmore {
+  display: block;
+  font-size: 14px;
+  margin: 20px auto;
+  background: #000;
+  color: white;
+  padding: 14px 30px;
+  cursor: pointer;
+}
+
+.stop_load {
+  width: 90%;
+  max-width: 500px;
+  margin: 30px auto;
+  position: relative;
+}
+
+.stop_load hr {
+  border: 1px dashed #555;
+}
+
+.stop_load p {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 0 10px;
+  white-space: nowrap;
+}

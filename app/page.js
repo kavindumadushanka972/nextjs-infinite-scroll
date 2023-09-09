@@ -5,7 +5,7 @@ import Link from 'next/link';
 import React from 'react';
 
 const HomePage = async () => {
-  const { photos } = await getAllPhotos();
+  const { photos, next_cursor } = await getAllPhotos();
   const data = photos ? JSON.parse(photos) : [];
 
   return (
@@ -15,7 +15,7 @@ const HomePage = async () => {
         <Link href="/">Home Page</Link>
       </nav>
 
-      <Gallery data={data} />
+      <Gallery data={data} next_cursor={next_cursor} />
     </div>
   );
 };
