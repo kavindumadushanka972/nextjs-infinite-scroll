@@ -1,18 +1,18 @@
 const baseUrl =
   process.env.NODE_ENV === 'development'
     ? 'http://localhost:3000/'
-    : 'add domain here';
+    : process.env.NEXT_PUBLIC_DOMAIN;
 
 export async function dynamicBlurDataUrl(url) {
   // * generate the samallest image => convert to Base64. w=16&amp;q=75
   /**
    * Can see what is the smallest image 'w=**&amp;q=**' by inspecting the image
-   * Can't see it right away by just inspecting. In the inspect window, right click 
+   * Can't see it right away by just inspecting. In the inspect window, right click
    * on the specific image, then select 'Edit as HTML' option.
    * there you can see something like this:
    * srcset="/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdn2htlate%2Fimage%2Fupload%2Fv1660537250%2Fcld-sample.jpg&amp;w=16&amp;q=75 16w,
-   * /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdn2htlate%2Fimage%2Fupload%2Fv1660537250%2Fcld-sample.jpg&amp;w=32&amp;q=75 32w, 
-   * /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdn2htlate%2Fimage%2Fupload%2Fv1660537250%2Fcld-sample.jpg&amp;w=48&amp;q=75 48w, 
+   * /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdn2htlate%2Fimage%2Fupload%2Fv1660537250%2Fcld-sample.jpg&amp;w=32&amp;q=75 32w,
+   * /_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fdn2htlate%2Fimage%2Fupload%2Fv1660537250%2Fcld-sample.jpg&amp;w=48&amp;q=75 48w,
    * /_next/image?......
    * you can see the smallest image is w=16&amp;q=75 here
    */
